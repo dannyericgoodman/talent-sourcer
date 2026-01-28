@@ -1,4 +1,26 @@
-# Superior Studios Talent Sourcer - Daily Automation
+name: Daily Talent Sourcing
+
+on:
+  schedule:
+      - cron: '0 13 * * *'
+        workflow_dispatch:
+        
+        jobs:
+          source-talent:
+              runs-on: ubuntu-latest
+                  steps:
+                        - uses: actions/checkout@v4
+                              - uses: actions/setup-python@v5
+                                      with:
+                                                python-version: '3.11'
+                                                      - run: pip install -r requirements.txt
+                                                            - name: Run Talent Sourcer
+                                                                    env:
+                                                                              SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+                                                                                        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+                                                                                                  GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+                                                                                                            GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+                                                                                                                    run: python talent_sourcer.py# Superior Studios Talent Sourcer - Daily Automation
 name: Daily Talent Sourcing
 
 on:
