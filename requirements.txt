@@ -1,0 +1,15 @@
+# Superior Studios Talent Sourcer - Dependencies
+# Install with: pip install -r requirements.txt
+
+# Google Search API
+google-search-results>=2.4.2
+
+# OpenAI for LLM scoring
+openai>=1.0.0
+
+# Google Sheets integration
+gspread>=5.10.0
+google-auth>=2.22.0
+
+# HTTP requests (used by serpapi internally)
+requests>=2.31.0
